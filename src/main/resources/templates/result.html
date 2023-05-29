@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TV Show Game - Result</title>
+</head>
+<body>
+<h1>TV Show Game - Result</h1>
+<h2>Chosen Prize: <span th:text="${chosenPrize.name}"></span></h2>
+<h3>All Boxes:</h3>
+<ul>
+    <li th:each="box, boxIndex : ${boxes}" th:text="${box.name}" th:unless="${boxIndex.index == chosenPrizeIndex}"></li>
+    <li th:each="box, boxIndex : ${boxes}" th:text="${box.name + ' (Chosen)'}" th:if="${boxIndex.index == chosenPrizeIndex}"></li>
+</ul>
+<a href="/">Play Again</a>
+</body>
+</html>
