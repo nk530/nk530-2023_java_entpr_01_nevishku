@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GameController {
-    private Game game;
+    private final Game game;
 
     public GameController() {
         game = new Game();
